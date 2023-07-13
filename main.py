@@ -46,7 +46,7 @@ if nombre_archivo is not None:
     st.download_button(
     label="Download data as CSV",
     datos=csv,
-    file_name=nombre_archivo + ".csv",
+    file_name="telefonos_estandarizados.csv",
     mime='text/csv',
 )  # Defaults to 'text/plain'
 

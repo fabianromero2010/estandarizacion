@@ -47,7 +47,7 @@ if nombre_archivo is not None:
     label="Download data as CSV",
     datos=csv,
     file_name="telefonos_estandarizados.csv",
-    mime='text/csv',
+    mime='text/csv'
 )  # Defaults to 'text/plain'
 
 else:

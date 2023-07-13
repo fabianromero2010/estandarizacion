@@ -43,12 +43,7 @@ if nombre_archivo is not None:
     st.dataframe(df)
 
     #Crear botón para descargar archivo csv
-    st.download_button(
-    label="Download data as CSV",
-    datos=csv,
-    file_name="telefonos_estandarizados.csv",
-    mime='text/csv'
-)  # Defaults to 'text/plain'
+    st.download_button('Download CSV', datos)
 
 else:
     st.warning("Por favor, selecciona un archivo para cargar.")

@@ -8,6 +8,12 @@ st.title("Aplicación Estandarización de telefonos nacionales")
 
 nombre_archivo = st.file_uploader("Selecciona un archivo", type=["txt"])
 
+Dataframe1 = {"strings": ["Adam", "Mike"],
+    "ints": [1, 3],
+    "floats": [1.123, 1000.23]
+}
+
+
 if nombre_archivo is not None:
     contenido = nombre_archivo.read().decode("utf-8")  # Leer el contenido del archivo
 
@@ -21,7 +27,7 @@ if nombre_archivo is not None:
         datos += resultado_str + '\n'
 
     # Crear un DataFrame con los resultados
-    df = pd.DataFrame({'Resultado': datos.split('\n')})
+    df = pd.DataFrame(Dataframe1)
 
     # Mostrar el resultado en una tabla
     st.write("Resultado:")

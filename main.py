@@ -28,7 +28,7 @@ if nombre_archivo is not None:
     st.dataframe(df)
 
     #Crear botón para descargar archivo csv
-    st.download_button('Download TXT', datos)  # Defaults to 'text/plain'
+    st.download_button('Download TXT', datos,'text/csv')  # Defaults to 'text/plain'
 
 else:
     st.warning("Por favor, selecciona un archivo para cargar.")

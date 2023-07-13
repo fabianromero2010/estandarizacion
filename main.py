@@ -8,21 +8,30 @@ st.title("Aplicación Estandarización de telefonos nacionales")
 
 nombre_archivo = st.file_uploader("Selecciona un archivo", type=["txt"])
 
-Dataframe1 = {"strings": ["Adam", "Mike"],
-    "ints": [1, 3],
-    "floats": [1.123, 1000.23]
+Dataframe1 = {"cadenas": [],
+    "tipo":[],
+    "indicativos_pais": [],
+    "indicativos_area": [],
+    "telefonos":[]
 }
 
 
 if nombre_archivo is not None:
     contenido = nombre_archivo.read().decode("utf-8")  # Leer el contenido del archivo
 
-    datos = "CADENA;INDICATIVO_PAIS;INDICATIVO_AREA;TELEFONO" + '\n'
+    datos = "CADENA;TIPO;INDICATIVO_PAIS;INDICATIVO_AREA;TELEFONO" + '\n'
     lector_csv = csv.reader(contenido.splitlines())
     
     for fila in lector_csv:
         linea = fila[0]  # Obtener el primer elemento de la fila como la línea a procesar
         resultado = estandarizador.estandarizar(linea)  # Obtener el resultado como una lista
+        Dataframe1["cadenas"].append(linea)
+        Dataframe1["tipo"].append(resultado[0])
+        Dataframe1["indicativos_pais"].append(resultado[1])
+        Dataframe1["indicativos_area"].append(resultado[2])
+        Dataframe1["telefonos"].append(resultado[3])
+
+        
         resultado_str = linea + ";" + ";".join(str(item) for item in resultado)  # Convertir cada elemento en una cadena de texto
         datos += resultado_str + '\n'
 

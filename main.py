@@ -19,7 +19,7 @@ Dataframe1 = {"cadenas": [],
 if nombre_archivo is not None:
     contenido = nombre_archivo.read().decode("utf-8")  # Leer el contenido del archivo
 
-    datos = "CADENA;TIPO;INDICATIVO_PAIS;INDICATIVO_AREA;TELEFONO" + '\n'
+    datos = "CADENA;TIPO;INDICATIVO_PAIS;INDICATIVO_AREA;TELEFONO" + '\r\n'
     lector_csv = csv.reader(contenido.splitlines())
     
     for fila in lector_csv:
@@ -33,7 +33,7 @@ if nombre_archivo is not None:
 
         
         resultado_str = linea + ";" + ";".join(str(item) for item in resultado)  # Convertir cada elemento en una cadena de texto
-        datos += resultado_str + '\n'
+        datos += resultado_str + '\r\n'
 
     # Crear un DataFrame con los resultados
     df = pd.DataFrame(Dataframe1)

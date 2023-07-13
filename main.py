@@ -7,6 +7,7 @@ separador_campos = ';'
 st.title("Aplicación Estandarización de telefonos nacionales")
 
 nombre_archivo = st.file_uploader("Selecciona un archivo", type=["txt"])
+name = nombre_archivo.name.split('.')[0]
 
 Dataframe1 = {"cadenas": [],
     "tipo":[],

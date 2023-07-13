@@ -25,6 +25,10 @@ if nombre_archivo is not None:
     # Mostrar el resultado en una tabla
     st.write("Resultado:")
     st.dataframe(df)
+
+    #Crear botón para descargar archivo csv
+    st.download_button('Download TXT', datos)  # Defaults to 'text/plain'
+
 else:
     st.warning("Por favor, selecciona un archivo para cargar.")
 

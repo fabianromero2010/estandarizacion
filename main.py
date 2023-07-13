@@ -3,6 +3,7 @@ import estandarizador
 import csv
 import pandas as pd
 
+separador_campos = ';'
 st.title("Aplicación Estandarización de telefonos nacionales")
 
 nombre_archivo = st.file_uploader("Selecciona un archivo", type=["txt"])
@@ -17,7 +18,7 @@ if nombre_archivo is not None:
         linea = fila[0]  # Obtener el primer elemento de la fila como la línea a procesar
         resultado = estandarizador.estandarizar(linea)  # Obtener el resultado como una lista
         resultado_str = " ".join(str(item) for item in resultado)  # Convertir cada elemento en una cadena de texto
-        datos += linea + '---->' + resultado_str + '\n'
+        datos += resultado_str + '\n'
 
     # Crear un DataFrame con los resultados
     df = pd.DataFrame({'Resultado': datos.split('\n')})

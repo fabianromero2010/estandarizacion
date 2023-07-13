@@ -17,7 +17,7 @@ if nombre_archivo is not None:
     for fila in lector_csv:
         linea = fila[0]  # Obtener el primer elemento de la fila como la línea a procesar
         resultado = estandarizador.estandarizar(linea)  # Obtener el resultado como una lista
-        resultado_str = " ".join(str(item) for item in resultado)  # Convertir cada elemento en una cadena de texto
+        resultado_str = ";".join(str(item) for item in resultado)  # Convertir cada elemento en una cadena de texto
         datos += resultado_str + '\n'
 
     # Crear un DataFrame con los resultados

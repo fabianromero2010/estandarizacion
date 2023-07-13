@@ -5,7 +5,7 @@ import pandas as pd
 
 st.title("Aplicación Estandarización de telefonos nacionales")
 
-nombre_archivo = st.file_uploader("Selecciona un archivo", type=["csv"])
+nombre_archivo = st.file_uploader("Selecciona un archivo", type=["txt"])
 
 if nombre_archivo is not None:
     contenido = nombre_archivo.read().decode("utf-8")  # Leer el contenido del archivo
@@ -27,7 +27,7 @@ if nombre_archivo is not None:
     st.dataframe(df)
 
     #Crear botón para descargar archivo csv
-    st.download_button('Download CSV', datos)  # Defaults to 'text/plain'
+    st.download_button('Download TXT', datos)  # Defaults to 'text/plain'
 
 else:
     st.warning("Por favor, selecciona un archivo para cargar.")

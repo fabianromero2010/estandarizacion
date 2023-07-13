@@ -7,7 +7,6 @@ separador_campos = ';'
 st.title("Aplicación Estandarización de telefonos nacionales")
 
 nombre_archivo = st.file_uploader("Selecciona un archivo", type=["txt"])
-name = nombre_archivo.name.split('.')[0]
 
 Dataframe1 = {"cadenas": [],
     "tipo":[],
@@ -19,6 +18,7 @@ Dataframe1 = {"cadenas": [],
 
 if nombre_archivo is not None:
     contenido = nombre_archivo.read().decode("utf-8")  # Leer el contenido del archivo
+    name = nombre_archivo.name.split('.')[0]
 
     datos = "CADENA;TIPO;INDICATIVO_PAIS;INDICATIVO_AREA;TELEFONO" + '\r\n'
     lector_csv = csv.reader(contenido.splitlines())

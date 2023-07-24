@@ -67,7 +67,7 @@ def limpiar_entrada(cadena):
 
 
 def estandarizar(cadena_estandarizar:str):
-    arreglo_estandarizacion = [None, '', '',cadena_estandarizar]
+    arreglo_estandarizacion = [None, '', '', '', cadena_estandarizar]
     entrada_limpia = limpiar_entrada(cadena_estandarizar)
     componentes_telefono = patrones.extraer_componentes_telefono(entrada_limpia)
 
@@ -76,6 +76,7 @@ def estandarizar(cadena_estandarizar:str):
         arreglo_estandarizacion[1] = componentes_telefono[0]
         arreglo_estandarizacion[2] = componentes_telefono[1]
         arreglo_estandarizacion[3] = componentes_telefono[2]
+        arreglo_estandarizacion[4] = concatenar_componentes_telefono(componentes_telefono[0],componentes_telefono[1],componentes_telefono[2])
         return arreglo_estandarizacion
 
     componentes_celular = patrones.extraer_componentes_celular(entrada_limpia)
@@ -84,6 +85,7 @@ def estandarizar(cadena_estandarizar:str):
         arreglo_estandarizacion[0] = 'Celular'
         arreglo_estandarizacion[1] = componentes_celular[0]
         arreglo_estandarizacion[3] = componentes_celular[1]
+        arreglo_estandarizacion[4] = concatenar_componentes_celular(componentes_celular[0],componentes_celular[1])
         return arreglo_estandarizacion
 
     return arreglo_estandarizacion
